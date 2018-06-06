@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github.com/joho/godotenv/autoload" // Automatically load env variables from a file
+	_ "github.com/joho/godotenv/autoload"
 	"github.com/vrischmann/envconfig"
 )
 

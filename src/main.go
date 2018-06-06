@@ -1,26 +1,42 @@
 package main
 
 import (
-	"fmt"
+	"net"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/gorilla/mux"
+	"github.com/justinas/alice"
+	"go.uber.org/zap"
 )
 
 var (
-	config = Config{}
-	router = mux.NewRouter().StrictSlash(true)
-	start  = time.Now()
+	start     = time.Now()
+	config    = Config{}
+	router    = mux.NewRouter().StrictSlash(true)
+	baseChain = alice.New(recoverHandler)
+	logger    *zap.SugaredLogger
 )
 
 func main() {
+	mustConfigure()
+	mustInitLogger()
+	mountRoutes()
+
+	host := config.Host
+	port := strconv.Itoa(config.Port)
+
 	server := http.Server{
-		Addr:    ":8080",
+		Addr:    net.JoinHostPort(host, port),
 		Handler: router,
 	}
 
-	fmt.Println("Server started")
+	logger.Infow("server started",
+		"host", host,
+		"port", port,
+		"duration", time.Since(start),
+	)
 
 	if err := server.ListenAndServe(); err != nil {
 		panic(err)
