@@ -10,6 +10,8 @@ RUN dep ensure -v
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o image-optimizer .
 
 FROM alpine:latest
+LABEL maintainer="Anton Egorov <anton@egorov.li>"
+
 WORKDIR /var/app
 
 COPY --from=egorovli/mozjpeg /usr/local /usr/local
