@@ -36,13 +36,13 @@ services:
 
 Configuration is supplied via environment variables and the supports the following options:
 
-| Environment Variable | Description                                  | Default Value |
-| -------------------- | -------------------------------------------- | ------------- |
-| ENV                  | Environment                                  | production    |
-| PORT                 | Port to bind to                              | 8080          |
-| HOST                 | Host to listen on                            | 0.0.0.0       |
-| QUALITY              | Default quality to use in `cjpeg` conversion | 80            |
-| EXECUTABLE_PATH      | Executable path to call                      | cjpeg         |
+| Environment Variable | Type     | Description                                  | Default Value |
+| -------------------- | -------- | -------------------------------------------- | ------------- |
+| ENV                  | `string` | Environment                                  | production    |
+| PORT                 | `int`    | Port to bind to                              | 8080          |
+| HOST                 | `string` | Host to listen on                            | 0.0.0.0       |
+| QUALITY              | `int`    | Default quality to use in `cjpeg` conversion | 80            |
+| EXECUTABLE_PATH      | `string` | Executable path to call                      | cjpeg         |
 
 ## API
 
