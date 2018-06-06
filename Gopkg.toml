@@ -1,0 +1,16 @@
+[[constraint]]
+  name = "github.com/gorilla/mux"
+  version = "1.6.2"
+
+[[constraint]]
+  name = "github.com/joho/godotenv"
+  version = "1.2.0"
+
+[[constraint]]
+  name = "github.com/vrischmann/envconfig"
+  version = "1.0.0"
+
+[prune]
+  non-go = true
+  go-tests = true
+  unused-packages = true
