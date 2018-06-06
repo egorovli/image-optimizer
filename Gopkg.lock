@@ -23,14 +23,51 @@
   version = "v1.2.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/justinas/alice"
+  packages = ["."]
+  revision = "03f45bd4b7dad4734bc4620e46a35789349abb20"
+
+[[projects]]
+  name = "github.com/satori/go.uuid"
+  packages = ["."]
+  revision = "f58768cc1a7a7e77a3bd49e98cdd21419399b6a3"
+  version = "v1.2.0"
+
+[[projects]]
   name = "github.com/vrischmann/envconfig"
   packages = ["."]
   revision = "98b0b9a570bdd3eb00e3e6eeb15548e7f982bfd3"
   version = "1.0.0"
 
+[[projects]]
+  name = "go.uber.org/atomic"
+  packages = ["."]
+  revision = "1ea20fb1cbb1cc08cbd0d913a96dead89aa18289"
+  version = "v1.3.2"
+
+[[projects]]
+  name = "go.uber.org/multierr"
+  packages = ["."]
+  revision = "3c4937480c32f4c13a875a1829af76c98ca3d40a"
+  version = "v1.1.0"
+
+[[projects]]
+  name = "go.uber.org/zap"
+  packages = [
+    ".",
+    "buffer",
+    "internal/bufferpool",
+    "internal/color",
+    "internal/exit",
+    "zapcore"
+  ]
+  revision = "eeedf312bc6c57391d84767a4cd413f02a917974"
+  version = "v1.8.0"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "48d560004f21ba30a7c6a3d1fb49fdd59bee2b08d0d9e9f84bb0508820a555f9"
+  inputs-digest = "0570358c39829845fce6808c39107fb7c6f29f0200cd04ffd45095f24d0f649d"
   solver-name = "gps-cdcl"
   solver-version = 1

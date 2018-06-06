@@ -7,9 +7,9 @@ import (
 
 // Config type
 type Config struct {
-	Env            string `envconfig:"default=development"`
+	Env            string `envconfig:"default=production"`
 	Port           int    `envconfig:"default=8080"`
-	Host           string `envconfig:"default=127.0.0.1"`
+	Host           string `envconfig:"default=0.0.0.0"`
 	ExecutablePath string `envconfig:"default=cjpeg"`
 	Quality        int    `envconfig:"default=80"`
 }

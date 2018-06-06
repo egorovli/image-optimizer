@@ -18,6 +18,9 @@ func mustInitLogger() {
 		panic(err)
 	}
 
-	defer unsugaredLogger.Sync()
+	defer func() {
+		_ = unsugaredLogger.Sync()
+	}()
+
 	logger = unsugaredLogger.Sugar()
 }
